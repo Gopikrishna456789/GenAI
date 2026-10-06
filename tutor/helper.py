@@ -8,14 +8,14 @@ from claude_agent_sdk.types import TextBlock
 
 
 MODEL_NAME = 'claude-haiku-4-5'
-def base_options(**arguments)->ClaudeAgentOptions:
+
+def base_options(**arguments) -> ClaudeAgentOptions:
     settings = {
-        'model' : MODEL_NAME,
-        'max_returns' : 3
+        'model': MODEL_NAME,
+        'max_turns': 3,
     }
     settings.update(arguments)
-    options = ClaudeAgentOptions(arguments)
-    return options
+    return ClaudeAgentOptions(**settings)
 
 
 def parse_message(message: Message):

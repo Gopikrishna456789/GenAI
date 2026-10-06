@@ -7,7 +7,7 @@ from helper import base_options, parse_message
 
 async def initiate_conversation():
     options = base_options()
-    question = "What is diffference between function and generator"
+    question = "What is difference between function and generator"
     count = 0
     async for message in query(prompt=question, options=options):
         count += 1
@@ -15,9 +15,7 @@ async def initiate_conversation():
         parse_message(message=message)
 
 
-        if __name__ == "__main__":
-            load_dotenv()
-             # load .env
-             #load_dotenv()
-            asyncio.run(initiate_conversation())
-            print("Program finished")
+if __name__ == "__main__":
+    load_dotenv()
+    asyncio.run(initiate_conversation())
+    print("Program finished")
